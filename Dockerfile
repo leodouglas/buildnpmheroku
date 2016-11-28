@@ -13,5 +13,4 @@ RUN apt-get update
 RUN apt-get install -y heroku-toolbelt
 RUN apt-get install -y ruby
 
-RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 VOLUME /root /tmp
