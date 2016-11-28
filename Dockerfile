@@ -1,7 +1,10 @@
-FROM node:4.4.4
-RUN apt-get update && apt-get install -y curl
-RUN echo >/etc/apt/sources.list.d/heroku.list \
-deb http://toolbelt.heroku.com/ubuntu ./
-RUN curl -sL https://toolbelt.heroku.com/apt/release.key | apt-key add -
-RUN apt-get update && apt-get install -y heroku-toolbelt ruby
+FROM ubuntu:16.04
+RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
+RUN apt-get update
+RUN apt-get install -y build-essential
+RUN apt-get install -y nodejs
+RUN apt-get install -y npm
+RUN apt-get install -y wget
+
+RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 VOLUME /root /tmp
