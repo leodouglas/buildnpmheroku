@@ -1,4 +1,4 @@
-FROM node:4-onbuild
+FROM node:4.4.4
 RUN apt-get update && apt-get install -y curl
 RUN echo >/etc/apt/sources.list.d/heroku.list \
 deb http://toolbelt.heroku.com/ubuntu ./
