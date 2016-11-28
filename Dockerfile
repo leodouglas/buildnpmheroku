@@ -7,5 +7,11 @@ RUN apt-get update
 RUN apt-get install -y build-essential
 RUN apt-get install -y nodejs
 
+RUN echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
+RUN wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
+RUN apt-get update
+RUN apt-get install -y heroku-toolbelt
+RUN apt-get install -y ruby
+
 RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 VOLUME /root /tmp
