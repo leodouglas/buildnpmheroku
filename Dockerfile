@@ -18,4 +18,4 @@ COPY ssh/id_rsa ~/.ssh/id_rsa
 COPY ssh/id_rsa.pub ~/.ssh/id_rsa.pub
 COPY ssh/known_hosts ~/.ssh/known_hosts
 
-VOLUME /root /tmp
+VOLUME /tmp
