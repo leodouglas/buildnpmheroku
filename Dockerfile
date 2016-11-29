@@ -13,4 +13,8 @@ RUN apt-get update
 RUN apt-get install -y heroku-toolbelt
 RUN apt-get install -y ruby
 
+ADD /ssh/id_rsa ~/.ssh/id_rsa
+ADD /ssh/id_rsa.pub ~/.ssh/id_rsa.pub
+ADD /ssh/known_hosts ~/.ssh/known_hosts
+
 VOLUME /root /tmp
