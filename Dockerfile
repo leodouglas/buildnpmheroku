@@ -12,10 +12,12 @@ RUN wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
 RUN apt-get update
 RUN apt-get install -y heroku-toolbelt
 RUN apt-get install -y ruby
+RUN chmod +t /tmp
 
 RUN mkdir -p /root/.ssh
 COPY ssh/id_rsa /root/.ssh/id_rsa
 COPY ssh/id_rsa.pub /root/.ssh/id_rsa.pub
 COPY ssh/known_hosts /root/.ssh/known_hosts
+RUN chmod 400 /root/.ssh/id_rsa
 
 VOLUME /tmp
