@@ -14,8 +14,8 @@ RUN apt-get install -y heroku-toolbelt
 RUN apt-get install -y ruby
 
 RUN mkdir -p ~/.ssh
-ADD /ssh/id_rsa ~/.ssh/id_rsa
-ADD /ssh/id_rsa.pub ~/.ssh/id_rsa.pub
-ADD /ssh/known_hosts ~/.ssh/known_hosts
+COPY ssh/id_rsa ~/.ssh/id_rsa
+COPY ssh/id_rsa.pub ~/.ssh/id_rsa.pub
+COPY ssh/known_hosts ~/.ssh/known_hosts
 
 VOLUME /root /tmp
